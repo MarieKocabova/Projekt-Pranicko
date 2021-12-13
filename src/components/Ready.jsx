@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import Header from "./Header";
 import Title from "./Title";
@@ -31,7 +32,9 @@ const Ready = () => {
             </div>
           </div>
 
-          <button className="button button--big">Vytvořit další přáníčko</button>
+          <Link to="/vytvor-prani">
+            <button className="button button--big">Vytvořit další přáníčko</button>
+          </Link>
         </div>
       </main>
     </>

@@ -2,13 +2,18 @@ import React from "react";
 
 import Header from "./Header";
 import Title from "./Title";
+import Background from "./ConfigFields/Background";
+import Colors from "./ConfigFields/Colors";
+import Covers from "./ConfigFields/Covers";
+import configuration from "../configuration.js";
 
 const Configurator = () => {
   return (
     <>
       <Header />
       <Title title={"Vytvořit přáníčko"} />
-
+      {console.log(configuration.backgrounds[0].description)}
+      {console.log(configuration.backgrounds[0].value)}
       <main className="content">
         <div className="box">
           <div className="box__inside">
@@ -18,40 +23,9 @@ const Configurator = () => {
                 <label className="field__label">Pozadí stránky</label>
 
                 <div className="field__swatch-group field__swatch-group--round">
-                  <div className="field__swatch">
-                    <input type="radio" name="background" id="background-red" checked />
-                    <label htmlFor="background-red" className="swatch--red" data-description="červená"></label>
-                  </div>
-
-                  <div className="field__swatch">
-                    <input type="radio" name="background" id="background-green" />
-                    <label htmlFor="background-green" className="swatch--green" data-description="zelená"></label>
-                  </div>
-
-                  <div className="field__swatch">
-                    <input type="radio" name="background" id="background-blue" />
-                    <label htmlFor="background-blue" className="swatch--blue" data-description="modrá"></label>
-                  </div>
-
-                  <div className="field__swatch">
-                    <input type="radio" name="background" id="background-gold" />
-                    <label htmlFor="background-gold" className="swatch--gold" data-description="zlatá"></label>
-                  </div>
-
-                  <div className="field__swatch">
-                    <input type="radio" name="background" id="background-tree" />
-                    <label htmlFor="background-tree" className="swatch--tree" data-description="stromeček"></label>
-                  </div>
-
-                  <div className="field__swatch">
-                    <input type="radio" name="background" id="background-decorations" />
-                    <label htmlFor="background-decorations" className="swatch--decorations" data-description="ozdoby"></label>
-                  </div>
-
-                  <div className="field__swatch">
-                    <input type="radio" name="background" id="background-snow" />
-                    <label htmlFor="background-snow" className="swatch--snow" data-description="sníh"></label>
-                  </div>
+                  {configuration.backgrounds.map((ele, idx) => (
+                    <Background description={ele.description} value={ele.value} key={idx} />
+                  ))}
                 </div>
               </div>
 
@@ -60,25 +34,9 @@ const Configurator = () => {
                 <label className="field__label">Barva přáníčka</label>
 
                 <div className="field__swatch-group field__swatch-group--round">
-                  <div className="field__swatch">
-                    <input type="radio" name="color" id="color-red" checked />
-                    <label htmlFor="color-red" className="swatch--red" data-description="červená"></label>
-                  </div>
-
-                  <div className="field__swatch">
-                    <input type="radio" name="color" id="color-green" />
-                    <label htmlFor="color-green" className="swatch--green" data-description="zelená"></label>
-                  </div>
-
-                  <div className="field__swatch">
-                    <input type="radio" name="color" id="color-blue" />
-                    <label htmlFor="color-blue" className="swatch--blue" data-description="modrá"></label>
-                  </div>
-
-                  <div className="field__swatch">
-                    <input type="radio" name="color" id="color-gold" />
-                    <label htmlFor="color-gold" className="swatch--gold" data-description="zlatá"></label>
-                  </div>
+                  {configuration.colors.map((ele, idx) => (
+                    <Colors description={ele.description} value={ele.value} key={idx} />
+                  ))}
                 </div>
               </div>
 
@@ -87,25 +45,9 @@ const Configurator = () => {
                 <label className="field__label">Obrázek na obálce</label>
 
                 <div className="field__swatch-group field__swatch-group--big">
-                  <div className="field__swatch">
-                    <input type="radio" name="cover" id="cover-gifts" checked />
-                    <label htmlFor="cover-gifts" className="swatch--cover-gifts" data-description="dárečky"></label>
-                  </div>
-
-                  <div className="field__swatch">
-                    <input type="radio" name="cover" id="cover-decorations" />
-                    <label htmlFor="cover-decorations" className="swatch--cover-decorations" data-description="ozdoby"></label>
-                  </div>
-
-                  <div className="field__swatch">
-                    <input type="radio" name="cover" id="cover-snowflakes" />
-                    <label htmlFor="cover-snowflakes" className="swatch--cover-snowflakes" data-description="vločky"></label>
-                  </div>
-
-                  <div className="field__swatch">
-                    <input type="radio" name="cover" id="cover-trees" />
-                    <label htmlFor="cover-trees" className="swatch--cover-trees" data-description="stromečky"></label>
-                  </div>
+                  {configuration.covers.map((ele, idx) => (
+                    <Covers description={ele.description} value={ele.value} key={idx} />
+                  ))}
                 </div>
               </div>
 
@@ -115,7 +57,7 @@ const Configurator = () => {
 
                 <div className="field__radio-group">
                   <div className="field__radio">
-                    <input type="radio" name="snow" id="snow-0" checked />
+                    <input type="radio" name="snow" id="snow-0" /* checked */ />
                     <label htmlFor="snow-0">bez sněhu</label>
                   </div>
 
@@ -137,7 +79,7 @@ const Configurator = () => {
 
                 <div className="field__radio-group">
                   <div className="field__radio">
-                    <input type="radio" name="music" id="music-jingle-bells" checked />
+                    <input type="radio" name="music" id="music-jingle-bells" /* checked */ />
                     <label htmlFor="music-jingle-bells">Rolničky, roličky</label>
                   </div>
 

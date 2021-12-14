@@ -1,10 +1,16 @@
 import React from "react";
+import ColorsOption from "../ConfigOptionFields/ColorsOption";
 
-const Colors = ({ description, value }) => {
+const Colors = ({ configuration }) => {
   return (
-    <div className="field__swatch">
-      <input type="radio" name="color" id={`color-${value}`} /* checked */ />
-      <label htmlFor={`color-${value}`} className={`swatch--${value}`} data-description={description}></label>
+    <div className="field">
+      <label className="field__label">Barva přáníčka</label>
+
+      <div className="field__swatch-group field__swatch-group--round">
+        {configuration.colors.map((ele, idx) => (
+          <ColorsOption description={ele.description} value={ele.value} key={idx} />
+        ))}
+      </div>
     </div>
   );
 };

@@ -1,10 +1,17 @@
 import React from "react";
 
-const Background = ({ description, value }) => {
+import BackgroundOption from "../ConfigOptionFields/BackgroundOption";
+
+const Background = ({ configuration }) => {
   return (
-    <div className="field__swatch">
-      <input type="radio" name="background" id={`background-${value}`} /* checked */ />
-      <label htmlFor={`background-${value}`} className={`swatch--${value}`} data-description={description}></label>
+    <div className="field">
+      <label className="field__label">Pozadí stránky</label>
+
+      <div className="field__swatch-group field__swatch-group--round">
+        {configuration.backgrounds.map((ele, idx) => (
+          <BackgroundOption description={ele.description} value={ele.value} key={idx} />
+        ))}
+      </div>
     </div>
   );
 };

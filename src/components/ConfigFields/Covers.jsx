@@ -1,10 +1,17 @@
 import React from "react";
 
-const Covers = ({ description, value }) => {
+import CoversOption from "../ConfigOptionFields/CoversOption";
+
+const Covers = ({ configuration }) => {
   return (
-    <div className="field__swatch">
-      <input type="radio" name="cover" id={`cover-${value}`} /* checked */ />
-      <label htmlFor={`cover-${value}`} className={`swatch--cover-${value}`} data-description={description}></label>
+    <div className="field">
+      <label className="field__label">Obrázek na obálce</label>
+
+      <div className="field__swatch-group field__swatch-group--big">
+        {configuration.covers.map((ele, idx) => (
+          <CoversOption description={ele.description} value={ele.value} key={idx} />
+        ))}
+      </div>
     </div>
   );
 };

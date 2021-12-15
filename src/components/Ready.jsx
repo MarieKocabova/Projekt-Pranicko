@@ -1,10 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import Header from "./Header";
 import Title from "./Title";
+import { Link } from "react-router-dom";
 
-const Ready = () => {
+const Ready = ({ dataFromServer }) => {
   return (
     <>
       <Header />
@@ -16,9 +16,9 @@ const Ready = () => {
 
           <div className="box shadow mb-30">
             <div className="box__inside pt-0 pb-0">
-              <a href="https://tvuj-web.cz/card/abc123" className="pickup__url">
-                https://tvuj-web.cz/card/abc123
-              </a>
+              <Link to={`/card/${dataFromServer?.data.id}`} className="pickup__url">
+                localhost:8080/card/{dataFromServer?.data.id}
+              </Link>
               <p className="pickup__description">Tento odkaz pošli emailem, přes messenger nebo ho dej na sociální sítě. Po kliknutí na odkaz se zobrazí tvoje přáníčko.</p>
             </div>
           </div>
@@ -27,7 +27,7 @@ const Ready = () => {
 
           <div className="box shadow mb-30">
             <div className="box__inside pt-0 pb-0">
-              <div className="pickup__code">ABC123</div>
+              <div className="pickup__code">{dataFromServer?.data.id}</div>
               <p className="pickup__description">S tímto kódem si kdokoliv může vyzvednout tvoje uložené přáníčko. Hodí se, když chceš přáníčko poslat třeba SMSkou a nechceš opisovat celou adresu.</p>
             </div>
           </div>

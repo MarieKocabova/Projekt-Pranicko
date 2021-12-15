@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-
 const Header = () => {
   const menuClass = ({ isActive }) => (isActive ? "menu__link menu__link--active" : "menu__link");
 
@@ -16,12 +15,6 @@ const Header = () => {
         </NavLink>
         <NavLink className={menuClass} to="/vyzvedni-prani">
           Vyzvednout
-        </NavLink>
-        <NavLink className={menuClass} to="/prani-hotove">
-          Ready
-        </NavLink>
-        <NavLink className={menuClass} to="/card/:id">
-          Přáníčko
         </NavLink>
       </nav>
     </>

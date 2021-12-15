@@ -12,7 +12,7 @@ import Music from "./ConfigFields/Music.jsx";
 import Text from "./ConfigFields/Text.jsx";
 import Sender from "./ConfigFields/Sender.jsx";
 
-const Configurator = () => {
+const Configurator = ({ handleSaveConfig }) => {
   const [backgroundValue, setBackgroundValue] = useState("");
   const [colorValue, setColorValue] = useState("");
   const [coverValue, setCoverValue] = useState("");
@@ -59,7 +59,7 @@ const Configurator = () => {
     sender: signature,
   };
 
-  console.log(sendingToServer);
+  // console.log(sendingToServer);
 
   return (
     <>
@@ -68,7 +68,7 @@ const Configurator = () => {
       <main className="content">
         <div className="box">
           <div className="box__inside">
-            <form className="configurator">
+            <div className="configurator">
               <Background configuration={configuration} handleSelect={backgroundSelect} />
               <Colors configuration={configuration} handleSelect={colorSelect} />
               <Covers configuration={configuration} handleSelect={coverSelect} />
@@ -78,10 +78,16 @@ const Configurator = () => {
               <Sender handleChange={signatureChange} signature={signature} />
 
               {/* <!-- tlačítko pro odeslání --> */}
-              <button type="submit" className="button button--big mt-30">
+              <button
+                type="submit"
+                className="button button--big mt-30"
+                onClick={() => {
+                  handleSaveConfig(sendingToServer);
+                }}
+              >
                 Uložit přáníčko
               </button>
-            </form>
+            </div>
           </div>
         </div>
       </main>

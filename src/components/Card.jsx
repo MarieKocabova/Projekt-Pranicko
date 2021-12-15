@@ -25,6 +25,7 @@ const Card = () => {
   console.log(cardData?.music);
 
   const [isPlaying, play, pause] = useAudio(`../assets/audio/jingle-bells.mp3`);
+  //const [isPlaying, play, pause] = useAudio(`../assets/audio/${cardData?.music}.mp3`);
 
   const toggleOpen = () => {
     cardOpen === "" ? setCardOpen("card--open") : setCardOpen("");
@@ -47,21 +48,21 @@ const Card = () => {
               <div className="inside-left__text">{cardData?.text}</div>
               <div className="inside-left__sender">{cardData?.sender}</div>
             </div>
-            <img className="inside-left__logo" src="../assets/images/czechitas.svg" alt="Czechitas" />
+            <img className="inside-left__logo" src="../assets/images/marieKocabova.svg" alt="Czechitas" />
           </div>
 
           <div className="inside-right">
             <div className="photo photo1">
-              <img src="../assets/images/photos/photo1.jpg" />
+              <img src="../assets/images/photos/ludek7.jpg" />
             </div>
             <div className="photo photo2">
-              <img src="../assets/images/photos/photo2.jpg" />
+              <img src="../assets/images/photos/ludek5.jpg" />
             </div>
             <div className="photo photo3">
-              <img src="../assets/images/photos/photo3.jpg" />
+              <img src="../assets/images/photos/ludek1.jpg" />
             </div>
             <div className="photo photo4">
-              <img src="../assets/images/photos/photo4.jpg" />
+              <img src="../assets/images/photos/ludek4.jpg" />
             </div>
           </div>
         </div>

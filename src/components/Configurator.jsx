@@ -72,7 +72,7 @@ const Configurator = () => {
               <Background configuration={configuration} handleSelect={backgroundSelect} />
               <Colors configuration={configuration} handleSelect={colorSelect} />
               <Covers configuration={configuration} handleSelect={coverSelect} />
-              <Snow configuration={configuration} />
+              <Snow configuration={configuration} handleSelect={snowSelect} />
               <Music configuration={configuration} handleSelect={musicSelect} />
               <Text handleChange={textChange} text={text} />
               <Sender handleChange={signatureChange} signature={signature} />

@@ -1,7 +1,6 @@
 import React from "react";
 
 const Text = ({ text, handleChange }) => {
-  console.log(text.length);
   return (
     <div className="field">
       <label className="field__label" htmlFor="text">

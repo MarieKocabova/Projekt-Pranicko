@@ -17,7 +17,7 @@ const Ready = ({ dataFromServer }) => {
           <div className="box shadow mb-30">
             <div className="box__inside pt-0 pb-0">
               <Link to={`/card/${dataFromServer?.data.id}`} className="pickup__url">
-                localhost:8080/card/{dataFromServer?.data.id}
+                https://vanocni-pranicko.netlify.app/card/{dataFromServer?.data.id}
               </Link>
               <p className="pickup__description">Tento odkaz pošli emailem, přes messenger nebo ho dej na sociální sítě. Po kliknutí na odkaz se zobrazí tvoje přáníčko.</p>
             </div>

@@ -41,7 +41,7 @@ const Create = () => {
   if (creating) {
     return <Configurator handleSaveConfig={handleSaveConfig} />;
   }
-  return <Ready dataFromServer={dataFromServer} />;
+  return <Ready dataFromServer={dataFromServer} setCreating={setCreating} />;
 };
 
 export default Create;
